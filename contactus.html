@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactus.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <div class="info-item">
+                    <span><strong>Address:</strong></span>
+                    <p>GOKARAJU RANGARAJU INSTITUTE OF ENGINEERING<br>Survey No. 288, Nizampet Rd, Kukatpally,<br>Hyderabad, Telangana 500090</p>
+                </div>
+                <div class="info-item">
+                    <span><strong>Phone:</strong></span>
+                    <p>+91 7207344440</p>
+                </div>
+                <div class="info-item">
+                    <span><strong>Email:</strong></span>
+                    <p>info@griet.ac.in</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Send Message</h3>
+                <form id="contactForm">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name..." required>
+        
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email..." required>
+        
+                    <label for="message">Type your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+        
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS
+        emailjs.init('yMFC3zrDfNv1kkO-q');  // Replace with your actual EmailJS User ID
+
+        // Add event listener to the form
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting in the default way
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Prepare data for EmailJS
+            const formData = {
+                name: name,
+                email: email,
+                message: message,
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_nvyyffq', 'template_daevlkj', formData) // Replace with your Service ID and Template ID
+                .then(function (response) {
+                    alert('Your message has been sent successfully!');
+                    document.getElementById('contactForm').reset(); // Reset form after successful submission
+                })
+                //.catch(function (error) {
+                    //alert('Failed to send message. Please try again later.');
+                    //console.error('EmailJS Error:', error);
+               // });
+        });
+    </script>
+</body>
+</html>

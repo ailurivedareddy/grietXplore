@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    
+   
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Overall Background Animation */
+        body {
+    background: linear-gradient(45deg, #ebebeb, #d3d3d3, #f0f0f0, #bfbfbf); /* Example gradient */
+    font-family: 'Franklin Gothic Medium';
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+/* Define the gradientBG animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+        
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #333;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .header img {
+            opacity: 0;
+            transform: scale(0);
+            animation: logoEntrance 1s ease-out forwards;
+        }
+
+        .header h3 {
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: textEntrance 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes logoEntrance {
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textEntrance {
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Lost and Found Section */
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 10%;
+            gap: 30px;
+        }
+
+        .form-box {
+            width: 55%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .form-box h2 {
+            color: #333;
+        }
+
+        .form-box input, .form-box textarea, .form-box select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        .form-box input:focus, .form-box textarea:focus, .form-box select:focus {
+            border-color: #ff6347;
+        }
+
+        .form-box button {
+            padding: 12px 30px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .form-box button:hover {
+            transform: translateY(-5px);
+        }
+
+        .results-container {
+            width: 40%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            height: 400px;
+            transition: all 0.3s ease;
+        }
+
+        .results-container h3 {
+            color: #333;
+        }
+
+        .result-item {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-item p {
+            margin: 5px 0;
+        }
+
+        /* Hide Navigation on Mobile */
+        @media screen and (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+                margin: 20px 5%;
+            }
+
+            .form-box, .results-container {
+                width: 100%;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Overall Background Animation */
+        body {
+            background-image:url(bg2.jpg);
+      
+            background-size: 80% 80%;
+            animation: gradientBG 10s ease infinite;
+            font-family: Arial;        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header Section */
+        .header {
+            font-size: 15px;
+            background-color: #333;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .header img {
+            opacity: 0;
+            transform: scale(0);
+            animation: logoEntrance 1s ease-out forwards;
+        }
+
+        .header h3 {
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: textEntrance 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes logoEntrance {
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textEntrance {
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* GrietXplore Title Animation */
+        .text-box h1 {
+            font-size: 92px;
+            color: white;
+            animation: crazyText 3s infinite;
+            opacity: 0;
+            transform: scale(0);
+            animation: logoEntrance 1s ease-out forwards;
+                }
+
+        /* Navigation Links */
+        .nav-links ul li a {
+            position: relative;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+           /* Facilities Section */
+           .facilities {
+            padding: 50px 10%;
+            text-align: center;
+        }
+    
+        .facilities h1 {
+            color: white; /* Updated to white */
+        }
+    
+        .facilities p {
+            color: white; /* Updated to white */
+        }
+        .campus {
+        padding: 50px 10%;
+        text-align: center;
+    }
+
+    .campus h1 {
+        color: white; /* Updated to white */
+    }
+
+    .campus p {
+        color: white; /* Updated to white */
+    }
+    
+        /* Testimonials Section */
+        .testimonials {
+            padding: 50px 10%;
+            text-align: center;
+        }
+    
+        .testimonials h1 {
+            color: white; /* Updated to white */
+        }
+    
+        .testimonials p {
+            color: rgb(9, 9, 9); /* Updated to white */
+        }
+
+
+        .nav-links ul li a:hover {
+            color: #ff6347; /* tomato color on hover */
+        }
+
+        .nav-links ul li a:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -3px;
+            left: 0;
+            background-color: #ff6347;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-links ul li a:hover:before {
+            width: 100%;
+        }
+
+        /* Course Stats Section */
+        .course-col {
+            transform: scale(0);
+            animation: zoomIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes zoomIn {
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .course-col:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .course-col:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .course-col:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        /* Campus Images Section */
+        .campus-col img {
+            transition: transform 0.5s ease;
+        }
+
+        .campus-col img:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* Clubs Section */
+        .facilities-col {
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .facilities-col:nth-child(odd) {
+            animation-delay: 0.3s;
+        }
+
+        .facilities-col:nth-child(even) {
+            animation-delay: 0.6s;
+        }
+
+        /* Testimonials Section */
+        .testimonial-col {
+            
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slideInRight 1s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .testimonial-col:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .testimonial-col:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        /* Call to Action Section */
+        .hero-btn {
+            position: relative;
+            padding: 12px 30px;
+            background-color: #6d6566;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Footer Section */
+        .footer {
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Other minor styles */
+        .icons i {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+
+        .icons i:hover {
+            color: #ff6347;
+        }
+
+        /* Hide Navigation on Mobile */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .fa-bars {
+                display: block;
+            }
+
+            .fa-times {
+                display: none;
+            }
+        }
+
+        /* Statistics Section Custom Styles */
+        .course {
+            padding: 50px 10%;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .course h1 {
+            font-size: 3rem;
+            color: #333;
+        }
+
+        .course p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .course-col {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-col {
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slideInRight 1s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .testimonial-col:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .testimonial-col:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        /* Call to Action Section */
+        .hero-btn {
+            position: relative;
+            padding: 12px 30px;
+            background-color: #6d6566;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-10px);
+        }
+        .course-col:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-col h3 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .course-col p {
+            font-size: 3rem;
+            color: #ff6347;
+            font-weight: bold;
+        }
+
+        .course-col p:after {
+            
+            font-size: 1.2rem;
+            color: #ff6347;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<section class="header">
+    <nav>
+        
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="academic.html">ACADEMICS</a></li>
+                <li><a href="clubs.html">CLUBS</a></li>
+                <li><a href="event.html">EVENTS</a></li>
+                <li><a href="lostnfound.html">LOST & FOUND</a></li>
+                <li><a href="contactus.html">CONTACT US</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+        <h1>Griet<span class="highlight-x">X</span>plore</h1>
+        <p>Founded in 1997 by Dr. G. Gangaraju, GRIET is a top self-financed institution approved by AICTE and affiliated with JNTUH<br> known for its excellence and innovation.</p>
+        <a href="#statistics" class="hero-btn">XPLORE</a>
+    </div>
+</section>
+
+<section class="course" id="statistics">
+    <h1>COLLEGE STATISTICS</h1>
+    <p>Placement Statistics, student strength, and Recruiting Companies</p>
+    <div class="row">
+        <div class="course-col"><a href="https://www.griet.ac.in/placements.php" style="text-decoration: none;">
+            <h3>PLACEMENTS</h3>
+            <p id="placements">0</p>
+        </div></a>
+
+        <div class="course-col">     <a href="https://www.griet.ac.in/images/careerwithus2.jpg"style="text-decoration: none;">
+            <h3>COMPANIES</h3>
+            <p id="companies">0</p>
+        </div></a>
+        <div class="course-col"><a href="https://www.alumni.griet.ac.in/"style="text-decoration: none;">
+            <h3>STUDENTS</h3>
+            <p id="students">0</p></a>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Statistics number count animation
+    const placements = document.getElementById("placements");
+    const companies = document.getElementById("companies");
+    const students = document.getElementById("students");
+
+    let placementValue = 950;
+    let companyValue = 100;
+    let studentValue = 3000;
+
+    let placementCount = 800;
+    let companyCount =0;
+    let studentCount = 2800;
+
+    function updateCounter(element, targetValue, step) {
+        const interval = setInterval(() => {
+            if (element === placements) {
+                placementCount += step;
+                if (placementCount >= targetValue) {
+                    placementCount = targetValue;
+                    clearInterval(interval);
+                }
+                element.innerHTML = placementCount + "+";
+            }
+            if (element === companies) {
+                companyCount += step;
+                if (companyCount >= targetValue) {
+                    companyCount = targetValue;
+                    clearInterval(interval);
+                }
+                element.innerHTML = companyCount + "+";
+            }
+            if (element === students) {
+                studentCount += step;
+                if (studentCount >= targetValue) {
+                    studentCount = targetValue;
+                    clearInterval(interval);
+                }
+                element.innerHTML = studentCount + "+";
+            }
+        }, 30);
+    }
+
+    // Initiate counters
+    setTimeout(() => {
+        updateCounter(placements, placementValue, 1);
+        updateCounter(companies, companyValue, 1);
+        updateCounter(students, studentValue, 1);
+    }, 200);
+</script>
+
+<section class="campus">
+    <h1>OUR CAMPUS</h1>
+    <p>Blend of modern facilities and inspiring spaces, fostering innovation, growth, and excellence.</p>
+    <div class="row">
+        <div class="campus-col">
+            <img src="campus1.jpg" alt="CSE Campus">
+            <div class="layer">
+                <h3>CSE</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="campus2.jpg" alt="GRIET Campus">
+            <div class="layer">
+                <h3>GRIET</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="campus4.jpg" alt="AI-ML Campus">
+            <div class="layer">
+                <h3>AI-ML</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="facilities">
+    <h1>CLUBS</h1>
+    <p>Vibrant clubs inspiring creativity, collaboration, and personal growth beyond academics.</p>
+    <div class="row">
+        <div class="facilities-col">
+            <img src="aacnew.jpg" alt="AAC Club">
+            <h3 style="color: white";>AAC</h3>
+            <p>The Advanced Academic Center (AAC) at GRIET, Hyderabad is an interdisciplinary research hub committed to excellence in teaching, learning, and research.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="sdc_logo.jpg" alt="Skill Development Cell">
+            <h3 style="color: white;">Skill Development Cell</h3>
+            <p>GRIET Skill Development Cell has been entrusted with the responsibility to train students by providing various courses to enhance employment opportunities.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="streetcause_logo.jpg" alt="Street Cause">
+            <h3 style="color: white";>Street Cause</h3>
+            <p>Street Cause is an NGO offering students a platform to impact society by supporting the underprivileged.</p>
+        </div>
+    </div>
+    <div class="view_more">
+        <button class="butn" onclick="location.href='clubs.html'">View More</button>
+    </div>
+</section>
+
+<section class="testimonials">
+
+    <h1>LOST and FOUND</h1>
+    <div class="form-container">
+        <!-- Lost and Found Form -->
+        <div class="form-box">
+            <h2>FOUND</h2>
+            <form id="lostForm">
+                <label for="itemLost">Item FOUND:</label>
+                <input type="text" id="itemLost" name="itemLost" placeholder="Enter lost item" required>
+
+                <label for="itemDescriptionLost">Item Description:</label>
+                <textarea id="itemDescriptionLost" name="itemDescriptionLost" rows="4" placeholder="Describe the item..." required></textarea>
+
+                <label for="contactLost">Contact Info:</label>
+                <select id="contactLost" name="contactLost" required>
+                    <option value="">Select Contact Type</option>
+                    <option value="phone">Phone Number</option>
+                    <option value="insta">Instagram ID</option>
+                </select>
+
+                <div id="contactLostField" class="contact-info-field">
+                    <input type="text" id="contactLostInput" name="contactLostInput" placeholder="Enter Phone Number or Instagram ID" required>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Submitted Information -->
+        <div class="results-container">
+            <h3>Submitted Information:</h3>
+            <div id="submittedData"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Function to handle form submission and display results
+    document.getElementById('lostForm').addEventListener('submit', function(event) {
+        event.preventDefault ();  // Prevent form from refreshing the page
+
+        // Capture form data
+        const itemLost = document.getElementById('itemLost').value;
+        const itemDescriptionLost = document.getElementById('itemDescriptionLost').value;
+        const contactLostInput = document.getElementById('contactLostInput').value;
+
+        // Create a new result item for each submission
+        const resultHTML = 
+            `<div class="result-item">
+                <p><strong>Item Lost:</strong> ${itemLost}</p>
+                <p><strong>Description:</strong> ${itemDescriptionLost}</p>
+                <p><strong>Contact Info:</strong> ${contactLostInput}</p>
+            </div>`;
+
+        // Insert the new result into the result container
+        document.getElementById('submittedData').innerHTML += resultHTML;  // Append results
+
+        // Reset the form
+        document.getElementById('lostForm').reset();
+    });
+</script>
+<section class="cta">
+    <a href="contactus.html" class="hero-btn">CONTACT US</a>
+</section>
+
+<section class="footer">
+    <h2>About Us</h2>
+    <p>GRIET is a self-financed institute committed to quality education and innovative teaching practices.</p>
+    <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+    </div>
+    <p>© Copyright 2020 - All Rights Reserved www.grietXplore.in</p>
+</section>
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>

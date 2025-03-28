@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Website Design Easy Tutorials</title>
+   
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bpgp.jpg');
+            background-size: cover; /* Ensures the image covers the full screen */
+            background-repeat: no-repeat; /* Prevents tiling of the image */
+            background-position: center center; /* Centers the image in the viewport */
+            height: 100vh; /* Makes sure the body takes up the full height of the screen */
+            width: 100%; /* Ensures the body takes up the full width */
+            display: flex; /* Ensures the header and content align correctly within the body */
+            flex-direction: column;
+            position: relative;
+            overflow: hidden; /* Prevents scrollbars during the transition */
+        }
+
+        .header {
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1; /* Keeps the content above the video initially */
+        }
+
+        .text-box h1 {
+            font-size: 4rem;
+            color: #fff1e6;
+            margin-bottom: 20px;
+        }
+
+        .animated-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fafafa;
+            margin-top: 10px;
+            height: 30px;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background: #42678b;
+        }
+
+        /* Animation styles */
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.5em;
+            background-color: #444;
+            vertical-align: bottom;
+            animation: blink 1.5s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% { background-color: transparent; }
+        }
+
+        /* Video background with zoom-in effect */
+        #videoBackground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit:fill;
+            z-index: -1; /* Ensures video is behind the content */
+            display: none; /* Initially hidden */
+            /* Zoom-in effect */
+            transition: transform 0.5s ease-in-out; /* Smooth zoom effect */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Video Element -->
+    <video id="videoBackground" muted autoplay>
+        <source src="pl1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <section class="header">
+       
+
+        <div class="text-box" id="textBox">
+            <h1 style="font-size: 90px;font-family: 'Poppins';">Griet Xplore</h1>
+            <div class="animated-text" id="dynamicText"></div>
+            <br>
+            <a href="#" class="hero-btn" id="diveInBtn">DIVE IN</a>
+        </div>
+    </section>
+
+    <script>
+        // Phrases for the typing animation
+        const phrases = [
+            "YOU CAN EXPLORE...",
+            "YOU CAN EXPERIENCE...",
+            "YOU CAN EMBARK...",
+            "YOU CAN IGNITE...",
+            "YOU CAN LIVE THROUGH..."
+        ];
+        
+        const dynamicText = document.getElementById("dynamicText");
+        let currentPhraseIndex = 0;
+        let letterIndex = 0;
+
+        function updateText() {
+            const currentPhrase = phrases[currentPhraseIndex];
+            const visibleText = currentPhrase.slice(0, letterIndex);
+            dynamicText.innerHTML = `${visibleText}<span class="cursor"></span>`;
+            
+            if (letterIndex < currentPhrase.length) {
+                letterIndex++;
+            } else {
+                letterIndex = 0;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            }
+        }
+
+        setInterval(updateText, 100);
+
+        // Function to handle video background and navigation
+        document.getElementById("diveInBtn").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevents the default link behavior
+            const video = document.getElementById("videoBackground");
+            const textBox = document.getElementById("textBox");
+
+            // Hide the text and button
+            textBox.style.display = "none";
+
+            // Show and play the video with zoom effect
+            video.style.display = "block";
+            video.play();
+
+            // When video ends, navigate to index.html
+            video.onended = function() {
+                window.location.href = "index.html";
+            };
+        });
+    </script>
+
+</body>
+</html>

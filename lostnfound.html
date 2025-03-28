@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1300px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            gap: 40px;
+        }
+        .form-box {
+            width: 55%;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .form-box h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+        button {
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .results {
+            width: 45%;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .results h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .result-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .result-item p {
+            margin: 5px 0;
+        }
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1300px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            gap: 40px;
+        }
+        .form-box {
+            width: 55%;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .form-box h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+        .results {
+            width: 45%;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .results h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .result-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .result-item p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Lost Form -->
+        <div class="form-box">
+            <h2>Lost</h2>
+            <form id="lostForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="itemLost">Item Lost:</label>
+                <input type="text" id="itemLost" name="itemLost" placeholder="Enter lost item" required>
+
+                <label for="itemDescriptionLost">Item Description:</label>
+                <textarea id="itemDescriptionLost" name="itemDescriptionLost" rows="4" placeholder="Describe the item..." required></textarea>
+
+                <label for="lostLocation">Lost Location:</label>
+                <input type="text" id="lostLocation" name="lostLocation" placeholder="Where did you lose it?" required>
+
+                <label for="contactLost">Contact Info:</label>
+                <select id="contactLost" name="contactLost" required>
+                    <option value="">Select Contact Type</option>
+                    <option value="phone">Phone Number</option>
+                    <option value="insta">Instagram ID</option>
+                </select>
+
+                <div id="contactLostField" class="contact-info-field">
+                    <input type="text" id="contactLostInput" name="contactLostInput" placeholder="Enter Phone Number or Instagram ID" required>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Result Section -->
+        <div id="resultContainer" class="results">
+            <h3>Submitted Information:</h3>
+            <div id="submittedData"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle form submission and display results
+        document.getElementById('lostForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form from refreshing the page
+
+            // Capture form data
+            const name = document.getElementById('name').value;
+            const itemLost = document.getElementById('itemLost').value;
+            const itemDescriptionLost = document.getElementById('itemDescriptionLost').value;
+            const lostLocation = document.getElementById('lostLocation').value;
+            const contactLost = document.getElementById('contactLost').value;
+            const contactLostInput = document.getElementById('contactLostInput').value;
+
+            // Create a new result item for each submission
+            const resultHTML = `
+                <div class="result-item">
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Item Lost:</strong> ${itemLost}</p>
+                    <p><strong>Description:</strong> ${itemDescriptionLost}</p>
+                    
+                    <p><strong>Contact Info:</strong> ${contactLostInput}</p>
+                </div>
+            `;
+
+            // Insert the new result into the result container
+            document.getElementById('submittedData').innerHTML += resultHTML;  // Append results
+
+            // Reset the form
+            document.getElementById('lostForm').reset();
+        });
+    </script>
+
+</body>
+</html>

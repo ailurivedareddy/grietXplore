@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header section */
+        .header {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Adjust height as needed */
+            background-image: url('grad.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7; /* Image opacity set to 70% */
+        }
+
+        .header h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better visibility */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            flex-wrap: wrap; /* Ensures the boxes fit on smaller screens */
+            gap: 20px; /* Adds space between the boxes */
+        }
+
+        .section {
+            width: 30%; /* Adjusted width to fit three boxes comfortably */
+            height: 500px; /* Increased height to accommodate both text and image */
+            margin: 10px 0; /* Margin between the boxes */
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center; /* Aligning text inside the box to the left */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .section img {
+            width: 80%; /* Adjusted image width */
+            height: 200px; /* Fixed image height */
+            object-fit: contain; /* Ensures the image fits within the box */
+            margin: 0 auto; /* Center the image */
+            display: block;
+            border-radius: 8px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: center; /* Title centered */
+        }
+
+        .section p {
+            font-size: 16px;
+            margin-top: 20px;
+            line-height: 1.6; /* Added line height for spacing between text lines */
+        }
+
+        .section .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px; /* Added padding around the button */
+            background-color: #414a82;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .section .btn:hover {
+            background-color: #222879;
+            transform: scale(1.05);
+        }
+
+        .btn-arrow::after {
+            content: " →"; /* Arrow symbol added */
+        }
+
+        /* Animations */
+        .section {
+            animation: fadeIn 1s ease;
+        }
+
+        .container .section:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .container .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .container .section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .container .section:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .container .section:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        .container .section:nth-child(6) {
+            animation-delay: 1s;
+        }
+
+        .container .section:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+
+        .container .section:nth-child(8) {
+            animation-delay: 1.4s;
+        }
+
+        .container .section:nth-child(9) {
+            animation-delay: 1.6s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>CLUBS</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <img src="aacnew.jpg" alt="Club 1">
+            <h2>Advanced Academic Center</h2>
+            <p>AAC at GRIET is a technical club focused on fostering innovation and knowledge in computing and technology among students.</p>
+            <a href="https://www.aacgriet.com/" class="btn btn-arrow" target="_blank">View More</a>
+        </div>
+        <!-- Add other sections here as in your previous example -->
+        <div class="section">
+            <img src="club.jpg" alt="Club 2">
+            <h2>Rythms</h2>
+            <p>This is a dynamic platform for creative expression, where budding artists can showcase their talents in dance, music, acting, anchoring, and more. With regular rehearsals, performances, and collaborative events, it’s a space to ignite your passion and shine.</p>
+            <a href="https://www.instagram.com/griet.rhythms/" class="btn btn-arrow" target="_blank">View More</a>
+        </div>
+
+        <div class="section">
+            <img src="fsw.jpg" alt="Club 3">
+            <h2>Free Software Wing</h2>
+            <p>Free Software Wing (FSW) advocates for open-source software and nurtures a community of developers. Through hackathons, workshops, and events, it fosters innovation and collaboration in the world of free software.</p>
+            <a href="https://github.com/fsw-griet" class="btn btn-arrow" target="_blank">View More</a>
+        </div>
+    </div>
+
+    <!-- Second tier of clubs -->
+    <div class="container">
+        <div class="section">
+            <img src="prag.jpg" alt="Club 4">
+            <h2>Pragnya</h2>
+            <p>Pragnya is GRIET's grandest techno-cultural extravaganza, a vibrant fusion of technology and culture. Hosted by IEEE GRIET SB, it promises a celebration of innovation, creativity, and unforgettable experiences.</p>
+            <a href="https://www.instagram.com/pragnyagriet/" class="btn btn-arrow" target="_blank">View More</a>
+        </div>
+
+        <div class="section">
+            <img src="spices.jpg" alt="Club 5">
+            <h2>Spices</h2>
+            <p>This is a flavorful haven for those passionate about cooking, baking, and all things gastronomic. Join us to explore the art of food, create delicious masterpieces, and share the joy of culinary expression.</p>
+            <a href="https://www.aacgriet.com/" class="btn btn-arrow" target="_blank">View More</a>
+        </div>
+
+        <div class="section">
+            <img src="sports.jpg" alt="Club 6">
+            <h2>Sports</h2>
+            <p>The Sports Club organizes various physical activities, including football, basketball, and cricket tournaments. Join us to stay fit and active!</p>
+            <a href="https://www.instagram.com/griet_sportsclub/" class="btn btn-arrow" target="_blank">View More</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <img src="streetcause_logo.jpg" alt="Club 7">
+            <h2>Street Cause</h2>
+            <p>Street Cause is an NGO offering students a platform to impact society by supporting the underprivileged.</p>
+            <a href="https://www.instagram.com/streetcausegriet/" class="btn btn-arrow" target="_blank">View More</a>
+        </div>
+
+        <div class="section">
+            <img src="sdc.jpg" alt="Club 8">
+            <h2>Skill Development Cell</h2>
+            <p>It empowers students with diverse training programs to boost employment and entrepreneurial opportunities. It focuses on skill enhancement for a brighter future.</p>
+            <a href="https://grietsdc.in/gsdc.html" class="btn btn-arrow" target="_blank">View More</a>
+        </div>
+
+        <div class="section">
+            <img src="rev.jpg" alt="Club 9">
+            <h2>Reverie</h2>
+            <p>Capture moments, tell stories, and unleash your creativity with the Photography Club! Join us for workshops, photo walks, and endless inspiration.</p>
+            <a href="https://www.instagram.com/griet_sportsclub/" class="btn btn-arrow" target="_blank" >View More</a>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
